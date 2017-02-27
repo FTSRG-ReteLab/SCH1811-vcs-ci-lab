@@ -60,6 +60,15 @@ public class TrainSystemTest {
 		Assert.assertEquals(0, controller.getReferenceSpeed());
 	}
 
+	public void test4() {
+		controller.addrecord();
+
+		Assert.assertEquals(true, controller.table_has_elements());
+		
+		
+	}
+
+
 
 
 	

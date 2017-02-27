@@ -13,6 +13,10 @@ public interface TrainController {
 	void setligthSwitchPosition(boolean ligthSwitchPosition);
 
 	void setdoorSwitchPosition(boolean doorSwitchPosition);
+	
+	void addrecord();
+		
+	public boolean table_has_elements();
 
 
 }

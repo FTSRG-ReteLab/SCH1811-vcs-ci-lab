@@ -1,5 +1,10 @@
 package hu.bme.mit.train.controller;
 
+import java.util.ArrayList;
+
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+
 import hu.bme.mit.train.interfaces.TrainController;
 
 public class TrainControllerImpl implements TrainController {
@@ -10,6 +15,25 @@ public class TrainControllerImpl implements TrainController {
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 
+	private Table<Integer, String, String> records = HashBasedTable.create();  
+	
+	
+	@Override
+	public void addrecord() {
+		
+		records.put(1,"current_time","12:15");
+		records.put(1,"joystick_position","5");
+		records.put(1,"reference_speed","100");
+		
+	}
+	
+	@Override
+	public boolean table_has_elements(){
+		return records.isEmpty();
+		
+	}
+	
+	
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {
@@ -20,7 +44,6 @@ public class TrainControllerImpl implements TrainController {
 
 		enforceSpeedLimit();
 	}
-
 	@Override
 	public int getReferenceSpeed() {
 		return referenceSpeed;
@@ -53,5 +76,8 @@ public class TrainControllerImpl implements TrainController {
 	public void setdoorSwitchPosition(boolean doorSwitchPosition){
 		this.door_closed = doorSwitchPosition;		
 	}
+	
+	
+
 
 }
