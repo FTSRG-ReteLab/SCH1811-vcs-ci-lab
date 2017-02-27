@@ -10,4 +10,9 @@ public interface TrainController {
 
 	void setJoystickPosition(int joystickPosition);
 
+	void setligthSwitchPosition(boolean ligthSwitchPosition);
+
+	void setdoorSwitchPosition(boolean doorSwitchPosition);
+
+
 }
