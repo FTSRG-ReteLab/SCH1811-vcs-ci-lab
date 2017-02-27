@@ -7,6 +7,8 @@ public class TrainUserImpl implements TrainUser {
 
 	private TrainController controller;
 	private int joystickPosition;
+	private boolean ligthSwitchPosition;
+	private boolean doorSwitchPosition;
 
 	public TrainUserImpl(TrainController controller) {
 		this.controller = controller;
@@ -27,5 +29,29 @@ public class TrainUserImpl implements TrainUser {
 		this.joystickPosition = joystickPosition;
 		controller.setJoystickPosition(joystickPosition);
 	}
+
+	@Override
+	public boolean getligthSwitchPosition() {
+		return ligthSwitchPosition;
+	}
+
+	@Override
+	public void overrideligthSwitchPosition(boolean ligthSwitchPosition) {
+		this.ligthSwitchPosition = ligthSwitchPosition;
+		controller.setligthSwitchPosition(ligthSwitchPosition);
+	}
+
+	@Override
+	public boolean getdoorSwitchPosition() {
+		return doorSwitchPosition;
+	}
+
+	@Override
+	public void overridedoorSwitchPosition(boolean doorSwitchPosition) {
+		this.doorSwitchPosition = doorSwitchPosition;
+		controller.setdoorSwitchPosition(doorSwitchPosition);
+	}
+
+	
 
 }
